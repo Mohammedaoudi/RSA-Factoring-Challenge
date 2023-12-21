@@ -1,0 +1,33 @@
+#!/usr/bin/python3
+""" importing sys library to get args"""
+
+
+import sys
+
+
+""" function unpack number factorial"""
+def fc():
+    """
+    function fc to search file to convert number and format n=p*q
+    """
+    try:
+        rsfl = sys.argv[1]
+        with open(rsfl) as f:
+            for rsnbr in f:
+                rsnbr = int(rsnbr)
+                if rsnbr % 2 == 0:
+                        print("{}={}*{}".format(rsnbr, rsnbr // 2, 2))
+                        continue
+                i = 3
+                while i < rsnbr // 2:
+                    if rsnbr % i == 0:
+                        print("{}={}*{}".format(rsnbr, rsnbr // i, i))
+                        break
+                    i = i + 2
+                if i == (rsnbr // 2) + 1:
+                    print("{}={}*{}".format(rsnbr, rsnbr, 1))
+    except:
+        pass
+
+
+fc() #to start automatic
